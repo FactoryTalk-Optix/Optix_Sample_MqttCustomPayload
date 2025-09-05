@@ -1,0 +1,447 @@
+Name: MQTT
+Type: MQTTCategoryFolder
+Children:
+- Name: MQTTBroker
+  Type: MQTTBroker
+  Children:
+  - Name: ListenerPort
+    Type: BaseDataVariableType
+    DataType: UInt16
+    Value: 8883
+  - Name: MaxConnections
+    Type: BaseDataVariableType
+    DataType: UInt32
+    Value: 25
+  - Name: MaxQoS
+    Type: BaseDataVariableType
+    DataType: MaxQoSEnum
+  - Name: MaxInflightMessages
+    Type: BaseDataVariableType
+    DataType: UInt32
+    Value: 20
+  - Name: MaxQueuedMessages
+    Type: BaseDataVariableType
+    DataType: UInt32
+    Value: 1000
+  - Name: MessageSizeLimit
+    Type: BaseDataVariableType
+    DataType: UInt32
+  - Name: RetainAvailable
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: DataPersistence
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: PersistentClientExpiration
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: AutosaveOnChanges
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: AutosaveInterval
+    Type: BaseDataVariableType
+    DataType: UInt32
+    Value: 20
+  - Name: AnonymousAuthentication
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: RequireClientCertificate
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: CACertificateFile
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+  - Name: CertificateFile
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+  - Name: CertificateKeyFile
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+  - Name: Running
+    Type: BaseDataVariableType
+    DataType: Boolean
+    AccessLevel: Read
+  - Name: MQTTUsers1
+    Type: MQTTBrokerUsersCategoryFolder
+    Children:
+    - Name: MQTT_home
+      Type: MQTTBrokerUser
+      Children:
+      - Name: Password
+        Type: Password
+        DataType: Password
+        Children:
+        - Name: Hash
+          Type: PropertyType
+          DataType: PasswordHash
+          AccessLevel: Read
+          Value: 
+           {
+            "TypeId": {
+             "Id": 252,
+             "Namespace": 1
+            },
+            "Body": {
+             "Hash": [36,143,26,54,10,224,108,130,169,5,38,9,85,41,167,193,61,2,223,98,121,173,162,4,100,227,157,136,154,115,222,34],
+             "Salt": [77,171,31,99,218,232,228,26,156,22,70,145,72,51,192,74,238,6,70,113,36,245,193,227,124,92,166,105,2,100,198,162]
+            }
+           }
+        - Name: ChangeTimestamp
+          Type: PropertyType
+          DataType: UtcTime
+          AccessLevel: Read
+          Value: "2025-05-09T09:56:41.0710227"
+        - Name: History
+          Type: PropertyType
+          DataType: PasswordHash
+          AccessLevel: Read
+          ValueRank: OneDimension
+          ArrayDimensions: [0]
+          Value: [{"TypeId":{"Id":252,"Namespace":1},"Body":{"Hash":[36,143,26,54,10,224,108,130,169,5,38,9,85,41,167,193,61,2,223,98,121,173,162,4,100,227,157,136,154,115,222,34],"Salt":[77,171,31,99,218,232,228,26,156,22,70,145,72,51,192,74,238,6,70,113,36,245,193,227,124,92,166,105,2,100,198,162]}}]
+    - Name: MQTT_bob
+      Type: MQTTBrokerUser
+      Children:
+      - Name: Password
+        Type: Password
+        DataType: Password
+        Children:
+        - Name: Hash
+          Type: PropertyType
+          DataType: PasswordHash
+          AccessLevel: Read
+          Value: 
+           {
+            "TypeId": {
+             "Id": 252,
+             "Namespace": 1
+            },
+            "Body": {
+             "Hash": [112,115,111,242,136,49,147,200,118,47,160,30,103,76,126,227,254,164,7,59,176,171,191,27,14,27,8,24,137,151,151,61],
+             "Salt": [147,9,136,208,58,146,147,175,143,178,67,252,73,45,206,188,27,51,169,114,158,228,17,217,55,14,247,142,227,237,3,19]
+            }
+           }
+        - Name: ChangeTimestamp
+          Type: PropertyType
+          DataType: UtcTime
+          AccessLevel: Read
+          Value: "2025-05-09T09:56:46.7935312"
+        - Name: History
+          Type: PropertyType
+          DataType: PasswordHash
+          AccessLevel: Read
+          ValueRank: OneDimension
+          ArrayDimensions: [0]
+          Value: [{"TypeId":{"Id":252,"Namespace":1},"Body":{"Hash":[112,115,111,242,136,49,147,200,118,47,160,30,103,76,126,227,254,164,7,59,176,171,191,27,14,27,8,24,137,151,151,61],"Salt":[147,9,136,208,58,146,147,175,143,178,67,252,73,45,206,188,27,51,169,114,158,228,17,217,55,14,247,142,227,237,3,19]}}]
+- Name: Home
+  Type: MQTTClient
+  Children:
+  - Name: BrokerAddress
+    Type: PropertyType
+    DataType: String
+    Value: "localhost"
+  - Name: BrokerPort
+    Type: PropertyType
+    DataType: UInt16
+    Value: 8883
+  - Name: ClientId
+    Type: PropertyType
+    DataType: String
+    Value: "home"
+  - Name: Status
+    Type: BaseDataVariableType
+    DataType: StatusEnum
+    ReferenceType: HasProperty
+    AccessLevel: Read
+  - Name: UserIdentityType
+    Type: BaseDataVariableType
+    DataType: UserIdentityTypeEnum
+    Value: 1
+  - Name: SSLTLSEnabled
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ValidateBrokerCertificate
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Class: Reference
+    Target: ns=5;i=12
+    Direction: Forward
+  - Class: Reference
+    Target: ns=5;i=44
+    Direction: Forward
+  - Name: Username
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "MQTT_home"
+  - Name: Password
+    Type: BaseDataVariableType
+    DataType: Password
+    Value: "Password01"
+  - Name: MQTTSubscriber_default_payload
+    Type: MQTTSubscriber
+    Children:
+    - Class: Reference
+      Target: ns=5;i=47
+      Direction: Forward
+    - Name: Subscriptions
+      Type: BaseObjectType
+      Children:
+      - Name: DefaultJSONSubscription1
+        Type: Subscription
+        ReferenceType: HasOrderedComponent
+        Children:
+        - Name: Folder
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/Optix_Sample_MqttCustomPayload/Model/home"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
+        - Name: Topic
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "home"
+        - Name: QoS
+          Type: BaseDataVariableType
+          DataType: QoSLevelEnum
+  - Name: MQTTPublisher_custom_payload
+    Type: MQTTPublisher
+    Children:
+    - Name: SamplingMode
+      Type: PropertyType
+      DataType: SamplingModeEnum
+      Value: 2
+    - Name: Folder
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/Optix_Sample_MqttCustomPayload/Model/home"
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
+      - Name: ItemKind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Objects/Optix_Sample_MqttCustomPayload/Model/home/LightbulbOn"
+    - Name: Topic
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "bobApp"
+    - Name: QoS
+      Type: BaseDataVariableType
+      DataType: QoSLevelEnum
+    - Name: Retain
+      Type: BaseDataVariableType
+      DataType: Boolean
+    - Name: PFEnabled
+      Type: PropertyType
+      DataType: Boolean
+      Value: true
+    - Name: PayloadUpdateTimestamp
+      Type: BaseDataVariableType
+      DataType: DateTime
+      ReferenceType: HasProperty
+      AccessLevel: Read
+    - Name: Item
+      Type: Alias
+      DataType: NodeId
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Objects/Optix_Sample_MqttCustomPayload/Model/home/LightbulbOn"
+    - Name: PFHeader
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Value: {"LocaleId":"en-US","Text":"Hello Bob, I'm Home: "}
+      Children:
+      - Name: StringFormatter1
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"en-US","Text":"Hello Bob, I'm Home: {0:T} #PFRecord"}
+        - Name: ns=2;Source0
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../PayloadUpdateTimestamp"
+    - Name: PFRecord
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"en-US","Text":"Lights are {1}"}
+        - Name: ns=2;Source1
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: ConditionalConverter1
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{Item}@Value"
+            - Name: TrueValue
+              Type: BaseDataVariableType
+              DataType: String
+              ReferenceType: HasParameter
+              Value: "on"
+            - Name: FalseValue
+              Type: BaseDataVariableType
+              DataType: String
+              ReferenceType: HasParameter
+              Value: "off"
+    - Name: SamplingPeriod
+      Type: PropertyType
+      DataType: Duration
+      Value: "0:00:00:01.0000000"
+- Name: Bob
+  Type: MQTTClient
+  Children:
+  - Name: BrokerAddress
+    Type: PropertyType
+    DataType: String
+    Value: "localhost"
+  - Name: BrokerPort
+    Type: PropertyType
+    DataType: UInt16
+    Value: 8883
+  - Name: ClientId
+    Type: PropertyType
+    DataType: String
+    Value: "Bob"
+  - Name: Status
+    Type: BaseDataVariableType
+    DataType: StatusEnum
+    ReferenceType: HasProperty
+    AccessLevel: Read
+  - Name: UserIdentityType
+    Type: BaseDataVariableType
+    DataType: UserIdentityTypeEnum
+    Value: 1
+  - Name: SSLTLSEnabled
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ValidateBrokerCertificate
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Class: Reference
+    Target: ns=5;i=12
+    Direction: Forward
+  - Class: Reference
+    Target: ns=5;i=44
+    Direction: Forward
+  - Name: MQTTPublisher_default_payload
+    Type: MQTTPublisher
+    Children:
+    - Name: SamplingMode
+      Type: PropertyType
+      DataType: SamplingModeEnum
+      Value: 1
+    - Name: Folder
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/Optix_Sample_MqttCustomPayload/Model/bob"
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
+      - Name: ItemKind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Objects/Optix_Sample_MqttCustomPayload/Model/bob/LightbulbOn"
+    - Name: Topic
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "home"
+    - Name: QoS
+      Type: BaseDataVariableType
+      DataType: QoSLevelEnum
+    - Name: Retain
+      Type: BaseDataVariableType
+      DataType: Boolean
+    - Name: PFEnabled
+      Type: PropertyType
+      DataType: Boolean
+    - Name: PayloadUpdateTimestamp
+      Type: BaseDataVariableType
+      DataType: DateTime
+      ReferenceType: HasProperty
+      AccessLevel: Read
+    - Name: Item
+      Type: Alias
+      DataType: NodeId
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Objects/Optix_Sample_MqttCustomPayload/Model/bob/LightbulbOn"
+    - Name: PFRecord
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+    - Name: SamplingPeriod
+      Type: PropertyType
+      DataType: Duration
+      Value: "0:00:00:01.0000000"
+  - Name: Username
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "MQTT_bob"
+  - Name: Password
+    Type: BaseDataVariableType
+    DataType: Password
+    Value: "Password01"
+  - Name: MQTTSubscriber_custom_payload
+    Type: MQTTSubscriber
+    Children:
+    - Name: Subscriptions
+      Type: BaseObjectType
+      Children:
+      - Name: PlainTextSubscription1
+        Type: SubscriptionPlainText
+        ReferenceType: HasOrderedComponent
+        Children:
+        - Name: Variable
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/Optix_Sample_MqttCustomPayload/Model/bob/HomeFeedback"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/VariableTypes/BaseVariableType/BaseDataVariableType"
+        - Name: Topic
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "bobApp"
+        - Name: QoS
+          Type: BaseDataVariableType
+          DataType: QoSLevelEnum
+    - Class: Reference
+      Target: ns=5;i=47
+      Direction: Forward

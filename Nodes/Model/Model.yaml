@@ -1,0 +1,5 @@
+Name: Model
+Type: ModelCategoryFolder
+Children:
+- File: home/home.yaml
+- File: bob/bob.yaml

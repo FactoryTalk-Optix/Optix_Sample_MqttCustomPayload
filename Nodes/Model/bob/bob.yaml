@@ -1,0 +1,12 @@
+Name: bob
+Id: g=54b7356aa791ab2d9e8a5ca5f460a41c
+Type: FolderType
+Children:
+- Name: LightbulbOn
+  Id: g=e26072b2e3d0970956c2fd62f0570d6c
+  Type: BaseDataVariableType
+  DataType: Boolean
+- Name: HomeFeedback
+  Id: g=ea12873fb1dc3bdb6796fab8afd93483
+  Type: BaseDataVariableType
+  DataType: String

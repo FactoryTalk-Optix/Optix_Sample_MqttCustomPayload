@@ -1,0 +1,8 @@
+Name: home
+Id: g=00f94c06bac40b4d433f627bdbb18678
+Type: FolderType
+Children:
+- Name: LightbulbOn
+  Id: g=95f794583ad9cfc9b3cac5ffc940da04
+  Type: BaseDataVariableType
+  DataType: Boolean
